@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BestOfTheYearApplication<best-of-the-year>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.lessons.java.best.best_of_the_year.BestOfTheYearApplication",
+            "projectName": "best-of-the-year",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
