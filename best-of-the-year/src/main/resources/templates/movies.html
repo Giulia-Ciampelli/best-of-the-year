@@ -19,11 +19,12 @@
     <div class="col-4" th:each="movie : ${movieList}">
         <div class="card" th:object="${movie}">
             <div class="card-body">
-                <h5 class="card-title" th:text="${movie.title}">
-                    <p class="card-text">
-                        
-                    </p>
-                </h5>
+                <h3 class="card-title" th:text="|*{title}|">
+                </h3>
+                <p class="card-text">
+                    Durata: [[*{length}]] minuti <br>
+                    Descrizione: [[*{description}]]
+                </p>
             </div>
         </div>
     </div>

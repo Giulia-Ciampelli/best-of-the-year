@@ -19,11 +19,12 @@
     <div class="col-4" th:each="song : ${songList}">
         <div class="card" th:object="${song}">
             <div class="card-body">
-                <h5 class="card-title" th:text="${song.title}">
-                    <p class="card-text">
-                        
-                    </p>
-                </h5>
+                <h3 class="card-title" th:text="|*{title}|">
+                </h3>
+                <p class="card-text">
+                    Album: [[*{album}]] <br>
+                    Autore: [[*{author}]]
+                </p>
             </div>
         </div>
     </div>

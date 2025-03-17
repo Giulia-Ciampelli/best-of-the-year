@@ -59,21 +59,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/")
 public class Homecontroller {
-    
+
     @GetMapping("/")
     public String home(@RequestParam(name = "name") String name, Model model) {
         model.addAttribute("name", name);
         return "home";
     }
 
-    // pagina lista film
-    @GetMapping("/movies")
-    private String getBestMovies(Model model) {
-        Movie movie1 = new Movie(1, "Film figo 1");
-        Movie movie2 = new Movie(2, "Film figo 2");
-        Movie movie3 = new Movie(3, "Film figo 3");
-        Movie movie4 = new Movie(4, "Film figo 4");
-        Movie movie5 = new Movie(5, "Film figo 5");
+    // #region metodi
+    private ArrayList<Movie> getBestMovies() {
+        Movie movie1 = new Movie(1, "Inside Out 2", 98,
+                "Sequel del celebre film d'animazione che esplora le emozioni di una giovane ragazza.");
+        Movie movie2 = new Movie(2, "Wonka", 116, "Storia delle origini del celebre cioccolatiere Willy Wonka.");
+        Movie movie3 = new Movie(3, "Kung Fu Panda 4", 94,
+                "Nuove avventure del panda Po mentre affronta sfide eroiche.");
+        Movie movie4 = new Movie(4, "Dogman", 53, "Film drammatico diretto da Luc Besson.");
+        Movie movie5 = new Movie(5, "The Creator", 55, "Film d'azione diretto da Gareth Edwards.");
+        Movie movie6 = new Movie(6, "Adagio", 57, "Film drammatico diretto da Stefano Sollima.");
+        Movie movie7 = new Movie(7, "The Old Oak", 113, "Film drammatico diretto da Ken Loach.");
+        Movie movie8 = new Movie(8, "Taylor Swift - The Eras Tour", 170,
+                "Film musicale diretto da Sam Wrench, che documenta il tour di Taylor Swift.");
+        Movie movie9 = new Movie(9, "Blue Beetle", 127, "Film di fantascienza diretto da Angel Manuel Soto.");
+        Movie movie10 = new Movie(10, "Wonder - White Bird", 120, "Film biografico diretto da Marc Forster.");
 
         ArrayList<Movie> listaFilm = new ArrayList<>();
         listaFilm.add(movie1);
@@ -81,19 +88,26 @@ public class Homecontroller {
         listaFilm.add(movie3);
         listaFilm.add(movie4);
         listaFilm.add(movie5);
+        listaFilm.add(movie6);
+        listaFilm.add(movie7);
+        listaFilm.add(movie8);
+        listaFilm.add(movie9);
+        listaFilm.add(movie10);
 
-        model.addAttribute("movieList", listaFilm);
-        return "movies";
+        return listaFilm;
     }
-    
-    // pagina lista canzoni
-    @GetMapping("/songs")
-    private String getBestSongs(Model model) {
-        Song song1 = new Song(1, "Canzone toga 1");
-        Song song2 = new Song(2, "Canzone toga 2");
-        Song song3 = new Song(3, "Canzone toga 3");
-        Song song4 = new Song(4, "Canzone toga 4");
-        Song song5 = new Song(5, "Canzone toga 5");
+
+    private ArrayList<Song> getBestSongs() {
+        Song song1 = new Song(1, "Genesis", "Raye", "My 21st Century Blues");
+        Song song2 = new Song(2, "Happy Mistake", "Lady Gaga", "Harlequin");
+        Song song3 = new Song(3, "Friend of a Friend", "The Smile", "Bending the Arc");
+        Song song4 = new Song(4, "Balloon", "Tyler, The Creator feat. Doechii", "Call Me If You Get Lost");
+        Song song5 = new Song(5, "Good Luck, Babe!", "Chappell Roan", "The Rise and Fall of a Midwest Princess");
+        Song song6 = new Song(6, "Starburster", "Fontaines D.C.", "Skinty Fia");
+        Song song7 = new Song(7, "Roy", "Idles", "CRAWLER");
+        Song song8 = new Song(8, "Not Like Us", "Kendrick Lamar", "Mr. Morale & The Big Steppers");
+        Song song9 = new Song(9, "Beautiful Things", "Benson Boone", "Walk Me Home");
+        Song song10 = new Song(10, "Expresso", "Sabrina Carpenter", "Emails I Can't Send");
 
         ArrayList<Song> listaCanzoni = new ArrayList<>();
         listaCanzoni.add(song1);
@@ -101,9 +115,31 @@ public class Homecontroller {
         listaCanzoni.add(song3);
         listaCanzoni.add(song4);
         listaCanzoni.add(song5);
+        listaCanzoni.add(song6);
+        listaCanzoni.add(song7);
+        listaCanzoni.add(song8);
+        listaCanzoni.add(song9);
+        listaCanzoni.add(song10);
 
+        return listaCanzoni;
+    }
+
+    // #endregion metodi
+
+    // pagina lista film
+    @GetMapping("/movies")
+    public String movies(Model model) {
+        ArrayList<Movie> listaFilm = getBestMovies();
+        model.addAttribute("movieList", listaFilm);
+        return "movies";
+    }
+
+    // pagina lista canzoni
+    @GetMapping("/songs")
+    public String songs(Model model) {
+        ArrayList<Song> listaCanzoni = getBestSongs();
         model.addAttribute("songList", listaCanzoni);
         return "songs";
     }
-    
+
 }
