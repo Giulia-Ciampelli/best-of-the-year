@@ -46,16 +46,64 @@
 
 package org.lessons.java.best.best_of_the_year.controllers;
 
+import java.util.ArrayList;
+
+import org.lessons.java.best.best_of_the_year.classes.Movie;
+import org.lessons.java.best.best_of_the_year.classes.Song;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
 public class Homecontroller {
     
     @GetMapping("/")
-    public String home() {
+    public String home(@RequestParam(name = "name") String name, Model model) {
+        model.addAttribute("name", name);
         return "home";
     }
+
+    // pagina lista film
+    @GetMapping("/movies")
+    private String getBestMovies(Model model) {
+        Movie movie1 = new Movie(1, "Film figo 1");
+        Movie movie2 = new Movie(2, "Film figo 2");
+        Movie movie3 = new Movie(3, "Film figo 3");
+        Movie movie4 = new Movie(4, "Film figo 4");
+        Movie movie5 = new Movie(5, "Film figo 5");
+
+        ArrayList<Movie> listaFilm = new ArrayList<>();
+        listaFilm.add(movie1);
+        listaFilm.add(movie2);
+        listaFilm.add(movie3);
+        listaFilm.add(movie4);
+        listaFilm.add(movie5);
+
+        model.addAttribute("movieList", listaFilm);
+        return "movies";
+    }
+    
+    // pagina lista canzoni
+    @GetMapping("/songs")
+    private String getBestSongs(Model model) {
+        Song song1 = new Song(1, "Canzone toga 1");
+        Song song2 = new Song(2, "Canzone toga 2");
+        Song song3 = new Song(3, "Canzone toga 3");
+        Song song4 = new Song(4, "Canzone toga 4");
+        Song song5 = new Song(5, "Canzone toga 5");
+
+        ArrayList<Song> listaCanzoni = new ArrayList<>();
+        listaCanzoni.add(song1);
+        listaCanzoni.add(song2);
+        listaCanzoni.add(song3);
+        listaCanzoni.add(song4);
+        listaCanzoni.add(song5);
+
+        model.addAttribute("songList", listaCanzoni);
+        return "songs";
+    }
+    
 }

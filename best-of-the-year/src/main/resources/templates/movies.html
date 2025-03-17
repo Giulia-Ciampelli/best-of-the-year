@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    
+    <!-- stile -->
+    <th:block th:replace="~{fragments/fragment :: style}">
+    </th:block>
+</head>
+
+<body>
+    <h1>
+        Watch the best movies:
+    </h1>
+
+    <div class="col-4" th:each="movie : ${movieList}">
+        <div class="card" th:object="${movie}">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${movie.title}">
+                    <p class="card-text">
+                        
+                    </p>
+                </h5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

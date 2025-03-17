@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+
+    <!-- stile -->
+    <th:block th:replace="~{fragments/fragment :: style}">
+    </th:block>
+</head>
+
+<body>
+    <h1>
+        Listen to the best songs:
+    </h1>
+    
+    <div class="col-4" th:each="song : ${songList}">
+        <div class="card" th:object="${song}">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${song.title}">
+                    <p class="card-text">
+                        
+                    </p>
+                </h5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

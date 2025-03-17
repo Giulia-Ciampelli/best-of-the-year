@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <!-- stile -->
+    <th:block th:replace="~{fragments/fragment :: style}">
+    </th:block>
 </head>
+
 <body>
     <h1>
-        Best of the Year by Giulia
+        Best of the Year by [[${name}]]
     </h1>
+    <a th:href="@{/movies}">
+        Film
+    </a>
+    <a th:href="@{/songs}">
+        Canzoni
+    </a>
 </body>
+
 </html>
