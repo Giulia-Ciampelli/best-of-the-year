@@ -3,20 +3,24 @@
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies - [[${movie.title}]]</title>
+    <title>Film - [[${movie.title}]]</title>
     
     <!-- stile -->
     <th:block th:replace="~{fragments/fragment :: style}">
     </th:block>
 </head>
 <body>
-    <div class="container" th:object="${movie}">
-        <h1 th:text="*{title}">
-        </h1>
-        <p class="card-text">
-            Durata: [[*{length}]] minuti <br>
-            Descrizione: [[*{description}]]
-        </p>
-    </div>
+    <main class="back-antique">
+        <div class="container-fluid" th:object="${movie}">
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="py-5" th:text="*{title}">
+                </h1>
+                <p class="my-5 fs-3">
+                    Durata: [[*{length}]] minuti <br>
+                    Descrizione: [[*{description}]]
+                </p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

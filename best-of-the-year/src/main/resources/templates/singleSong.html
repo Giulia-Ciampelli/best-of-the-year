@@ -3,20 +3,24 @@
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs - [[${song.title}]]</title>
+    <title>Canzoni - [[${song.title}]]</title>
     
     <!-- stile -->
     <th:block th:replace="~{fragments/fragment :: style}">
     </th:block>
 </head>
 <body>
-    <div class="container" th:object="${song}">
-        <h1 th:text="*{title}">
-        </h1>
-        <p class="card-text">
-            Album: [[*{album}]] <br>
-            Autore: [[*{author}]]
-        </p>
-    </div>
+    <main class="back-antique">
+        <div class="container-fluid" th:object="${song}">
+            <div class="d-flex flex-column align-items-center">
+                <h1 class="py-5" th:text="*{title}">
+                </h1>
+                <p class="my-5 fs-3">
+                    Album: [[*{album}]] <br>
+                    Autore: [[*{author}]]
+                </p>
+            </div>
+        </div> 
+    </main>
 </body>
 </html>

@@ -11,6 +11,22 @@
     --rich-midnight: #011C27;
 }
 
+main {
+    height: 100vh;
+}
+
+h1 {
+    color: var(--power-purple);
+}
+
+p {
+    color: var(--rich-midnight);
+}
+
+.hover:hover {
+    scale: 1.1 !important;
+}
+
 /* #region colori */
 .back-mantis {
     background-color: var(--mantis-green) !important;

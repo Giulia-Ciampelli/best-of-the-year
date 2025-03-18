@@ -4,16 +4,18 @@
 <head xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs</title>
+    <title>Canzoni</title>
 
     <!-- stile -->
     <th:block th:replace="~{fragments/fragment :: style}">
     </th:block>
 </head>
 
-<body>   
-    <div th:replace="~{fragments/fragment :: list-style(elementList=${songList}, linkPrefix='songs', titleProperty='title', idProperty='id', headerText='Ascolta le canzoni migliori:')}">
-    </div>
+<body>
+    <main class="back-antique">
+        <div th:replace="~{fragments/fragment :: list-style(elementList=${songList}, linkPrefix='songs', titleProperty='title', idProperty='id', headerText='Ascolta le canzoni migliori:')}">
+        </div>
+    </main>   
 </body>
 
 </html>
