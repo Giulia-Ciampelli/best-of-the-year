@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs - [[${song.title}]]</title>
+    
+    <!-- stile -->
+    <th:block th:replace="~{fragments/fragment :: style}">
+    </th:block>
 </head>
 <body>
-    <h1 th:text="${song.title}">
-
-    </h1>
+    <div class="container" th:object="${song}">
+        <h1 th:text="*{title}">
+        </h1>
+        <p class="card-text">
+            Album: [[*{album}]] <br>
+            Autore: [[*{author}]]
+        </p>
+    </div>
 </body>
 </html>
