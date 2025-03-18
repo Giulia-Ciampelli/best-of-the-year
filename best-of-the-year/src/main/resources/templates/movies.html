@@ -12,19 +12,7 @@
 </head>
 
 <body>
-    <h1>
-        Watch the best movies:
-    </h1>
-
-    <div class="col-4" th:each="movie : ${movieList}">
-        <div class="card" th:object="${movie}">
-            <div class="card-body">
-                <a class="text-decoration-none" th:href="@{/movies/{id}(id=${movie.id})}">
-                    <h3 class="card-title" th:text="|*{title}|">
-                    </h3>
-                </a>
-            </div>
-        </div>
+    <div th:replace="~{fragments/fragment :: list-style(elementList=${movieList}, linkPrefix='movies', titleProperty='title', idProperty='id', headerText='Guarda i film più entusiasmanti:')}">
     </div>
 </body>
 
