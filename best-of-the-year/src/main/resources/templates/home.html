@@ -12,15 +12,19 @@
 </head>
 
 <body>
-    <h1>
-        Best of the Year by [[${name}]]
-    </h1>
-    <a th:href="@{/movies}">
-        Film
-    </a>
-    <a th:href="@{/songs}">
-        Canzoni
-    </a>
+    <div class="container-fluid">
+        <h1 class="text-center my-5">
+            Best of the Year by [[${name}]]
+        </h1>
+        <div class="d-flex justify-content-center">
+            <a class="text-decoration-none m-5 fs-1" th:href="@{/movies}">
+                Film
+            </a>
+            <a class="text-decoration-none m-5 fs-1" th:href="@{/songs}">
+                Canzoni
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>

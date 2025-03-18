@@ -4,7 +4,43 @@
     box-sizing: border-box;
 }
 
-/* salvaocchi */
-body {
-    background-color: cadetblue;
+:root {
+    --mantis-green: #7AC74F;
+    --antique-white: #FFEEDB;
+    --power-purple: #706993;
+    --rich-midnight: #011C27;
 }
+
+/* #region colori */
+.back-mantis {
+    background-color: var(--mantis-green) !important;
+}
+
+.mantis {
+    color: var(--mantis-green) !important;
+}
+
+.back-antique {
+    background-color: var(--antique-white) !important;
+}
+
+.antique {
+    color: var(--antique-white) !important;
+}
+
+.back-purple {
+    background-color: var(--power-purple) !important;
+}
+
+.purple {
+    color: var(--power-purple) !important;
+}
+
+.back-midnight {
+    background-color: var(--rich-midnight) !important;
+}
+
+.midnight {
+    color: var(--rich-midnight) !important;
+}
+/* #endregion colori */

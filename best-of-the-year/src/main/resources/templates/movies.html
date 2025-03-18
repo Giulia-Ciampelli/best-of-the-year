@@ -19,7 +19,7 @@
     <div class="col-4" th:each="movie : ${movieList}">
         <div class="card" th:object="${movie}">
             <div class="card-body">
-                <a th:href="@{/movies/{id}(id=${movie.id})}">
+                <a class="text-decoration-none" th:href="@{/movies/{id}(id=${movie.id})}">
                     <h3 class="card-title" th:text="|*{title}|">
                     </h3>
                 </a>
